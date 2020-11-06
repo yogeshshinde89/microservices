@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "UZ6WxIkqSZn17dwiOO1cbx4/jcT7fpSrKarmrxByuMbBHocZ2teVBbXIaENm79kFmTaJBy/ZcN+IQMjEI8J46A==",
+  "dgSpecHash": "sQ4B/6RUdmZ4AmYTaXmJRT/WWfQefy4YlFVoHU9dD8WM1fKMLQw6DwD9byDtOvdOdN+AN2Se09YiW2geTQ4jcg==",
   "success": true,
   "projectFilePath": "C:\\Users\\fwin01962\\source\\repos\\microservices\\JWTAuthentication_Service\\JWTAuthentication_Service.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\fwin01962\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\fwin01962\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\fwin01962\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\fwin01962\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\fwin01962\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\fwin01962\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -12,7 +12,7 @@ namespace JWTAuthentication_Service.Extensions
     /// </summary>
     public static class MiddlewareExtensions
     {
-        private const string UriString = "https://fulcrumdigital.com/"; 
+        private const string UriString = "https://google.co.in/"; 
 
         /// <summary>
         /// Adds the custom swagger.
@@ -25,12 +25,12 @@ namespace JWTAuthentication_Service.Extensions
             {
                 cfg.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "F1 Rule Engine Service",
+                    Title = "JWT Authentication Service",
                     Version = "v3",
-                    Description = "Example API that shows how to validate rules, using JSON rules files  with ASP.NET Core 3.1, built from scratch.",
+                    Description = "Example API that shows how to Login,Authenticate,Authorize using IDENTITY with ASP.NET Core 3.1, built from scratch.",
                     Contact = new OpenApiContact
                     {
-                        Name = "Fulcrum",
+                        Name = "Google",
                         Url = new Uri(UriString)
                     },
                     License = new OpenApiLicense
@@ -74,8 +74,8 @@ namespace JWTAuthentication_Service.Extensions
         {
             app.UseSwagger().UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "F1 Rule Engine Service");
-                options.DocumentTitle = "F1 Rule Engine Service";
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "JWT Token Authentication & Authorization Service");
+                options.DocumentTitle = "JWT Authentication Service";
             });
             return app;
         }

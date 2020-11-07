@@ -1,6 +1,6 @@
 using System;
 
-namespace JWTAuthentication_Service
+namespace Masterdata_Service
 {
     public class WeatherForecast
     {
@@ -13,4 +13,3 @@ namespace JWTAuthentication_Service
         public string Summary { get; set; }
     }
 }
-//https://www.c-sharpcorner.com/article/authentication-and-authorization-in-asp-net-core-web-api-with-json-web-tokens/

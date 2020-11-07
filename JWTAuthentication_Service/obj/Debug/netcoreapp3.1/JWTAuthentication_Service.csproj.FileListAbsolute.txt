@@ -38,7 +38,6 @@ D:\Apps\Microservices\microservices\JWTAuthentication_Service\bin\Debug\netcorea
 D:\Apps\Microservices\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 D:\Apps\Microservices\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Apps\Microservices\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\Apps\Microservices\microservices\JWTAuthentication_Service\obj\Debug\netcoreapp3.1\JWTAuthentication_Service.csprojAssemblyReference.cache
 D:\Apps\Microservices\microservices\JWTAuthentication_Service\obj\Debug\netcoreapp3.1\JWTAuthentication_Service.AssemblyInfoInputs.cache
 D:\Apps\Microservices\microservices\JWTAuthentication_Service\obj\Debug\netcoreapp3.1\JWTAuthentication_Service.AssemblyInfo.cs
 D:\Apps\Microservices\microservices\JWTAuthentication_Service\obj\Debug\netcoreapp3.1\JWTAuthentication_Service.RazorTargetAssemblyInfo.cache

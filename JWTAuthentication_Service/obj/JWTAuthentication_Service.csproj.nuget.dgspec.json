@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fwin01962\\source\\repos\\microservices\\JWTAuthentication_Service\\JWTAuthentication_Service.csproj": {}
+    "D:\\Apps\\Microservices\\microservices\\JWTAuthentication_Service\\JWTAuthentication_Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fwin01962\\source\\repos\\microservices\\JWTAuthentication_Service\\JWTAuthentication_Service.csproj": {
+    "D:\\Apps\\Microservices\\microservices\\JWTAuthentication_Service\\JWTAuthentication_Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fwin01962\\source\\repos\\microservices\\JWTAuthentication_Service\\JWTAuthentication_Service.csproj",
+        "projectUniqueName": "D:\\Apps\\Microservices\\microservices\\JWTAuthentication_Service\\JWTAuthentication_Service.csproj",
         "projectName": "JWTAuthentication_Service",
-        "projectPath": "C:\\Users\\fwin01962\\source\\repos\\microservices\\JWTAuthentication_Service\\JWTAuthentication_Service.csproj",
-        "packagesPath": "C:\\Users\\fwin01962\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fwin01962\\source\\repos\\microservices\\JWTAuthentication_Service\\obj\\",
+        "projectPath": "D:\\Apps\\Microservices\\microservices\\JWTAuthentication_Service\\JWTAuthentication_Service.csproj",
+        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+        "outputPath": "D:\\Apps\\Microservices\\microservices\\JWTAuthentication_Service\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\fwin01962\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,6 +41,28 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
@@ -61,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

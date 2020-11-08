@@ -141,10 +141,10 @@ namespace JWTAuthentication_Service.Controllers
         [HttpDelete]
         [Route("Deleteuser")]
         [Authorize(Roles = UserRoles.Admin)]
-        public async Task<ActionResult> DeleteUser(string userId)
+        public async Task<ActionResult> DeleteUser(string username)
         {
-            var user = await userManager.FindByNameAsync(userId);
-            if (userId == null || user == null)
+            var user = await userManager.FindByNameAsync(username);
+            if (username == null || user == null)
             {
                 return NotFound();
             }

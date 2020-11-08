@@ -138,33 +138,7 @@ namespace JWTAuthentication_Service.Controllers
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }
 
-        [HttpDelete]
-        [Route("Deleteuser")]
-        [Authorize(Roles = UserRoles.Admin)]
-        public async Task<ActionResult> DeleteUser(string username)
-        {
-            var user = await userManager.FindByNameAsync(username);
-            if (username == null || user == null)
-            {
-                return NotFound();
-            }
-
-
-            //List Logins associated with user
-            //var logins = user.;
-            //Gets list of Roles associated with current user
-
-            var rolesForUser = await userManager.GetRolesAsync(user);
-            var status = await userManager.DeleteAsync(user);
-            if (status.Succeeded == true)
-            {
-                return Ok(new Response { Status = "Success", Message = "User Deleted successfully!" });
-            }
-            else
-            {
-                return Ok(new Response { Status = "Failure", Message = "Something went wrong while deleting the record!" });
-            }
-        }
+   
 
 
     }

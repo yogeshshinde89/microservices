@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tDlY6ygG/03nWv/h1QT9nA1nipABfBehrvHThU3DRN7VBWzzhx5y6A1TlVBA50bcWemABy4qdb1mCWogmdF+SQ==",
+  "dgSpecHash": "/EHkSmrPay2wHeMfv9c4wwYVyQNkhilo3CdQQ8aT9YjQK1h7Mfry/ihQ5tlb+0GKSeYuD671cfdmr8TWtFMmPw==",
   "success": true,
-  "projectFilePath": "D:\\Apps\\Microservices\\microservices\\JWTAuthentication_Service\\JWTAuthentication_Service.csproj",
+  "projectFilePath": "D:\\Projects\\DOT NET Core\\microservices\\JWTAuthentication_Service\\JWTAuthentication_Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hp\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

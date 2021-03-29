@@ -6749,11 +6749,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Apps\\Microservices\\microservices\\JWTAuthentication_Service\\JWTAuthentication_Service.csproj",
+      "projectUniqueName": "D:\\Projects\\DOT NET Core\\microservices\\JWTAuthentication_Service\\JWTAuthentication_Service.csproj",
       "projectName": "JWTAuthentication_Service",
-      "projectPath": "D:\\Apps\\Microservices\\microservices\\JWTAuthentication_Service\\JWTAuthentication_Service.csproj",
+      "projectPath": "D:\\Projects\\DOT NET Core\\microservices\\JWTAuthentication_Service\\JWTAuthentication_Service.csproj",
       "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
-      "outputPath": "D:\\Apps\\Microservices\\microservices\\JWTAuthentication_Service\\obj\\",
+      "outputPath": "D:\\Projects\\DOT NET Core\\microservices\\JWTAuthentication_Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6828,7 +6828,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.407\\RuntimeIdentifierGraph.json"
       }
     }
   }

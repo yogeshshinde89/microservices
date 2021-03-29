@@ -19,6 +19,8 @@ namespace JWTAuthentication_Service.Controllers
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly IConfiguration _configuration;
 
+        private readonly int _Newpasswordlength;
+
         public UserController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
         {
             this.userManager = userManager;
@@ -79,17 +81,53 @@ namespace JWTAuthentication_Service.Controllers
             }
         }
 
-        //[HttpPost]
-        //[Route("/api/ForgotPassword")]
-        //public async Task<IActionResult> ForgotPassword(string username)
-        //{
-        //    var user = await userManager.FindByNameAsync(username);
+        private static string CreateRandomPassword(int length)
+        {
+            //logger.Info(_Newpasswordlength)
+            // Create a string of characters, numbers, special characters that allowed in the password  
+            string validChars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*?_-";
+            Random random = new Random();
 
-        //    if (user != null)
-        //    {
-        //        await userManager.GeneratePasswordResetTokenAsync(user);
-        //    }
-        //}
+            // Select one random character at a time from the string  
+            // and create an array of chars  
+            char[] chars = new char[length];
+            for (int i = 0; i < length; i++)
+            {
+                chars[i] = validChars[random.Next(0, validChars.Length)];
+            }
+            return new string(chars);
+        }
 
+        [HttpPost]
+        [Route("/api/ForgotPassword")]
+        public async Task<IActionResult> ForgotPassword(string username)
+        {
+            var newpassword = CreateRandomPassword(_Newpasswordlength);
+            var userexists = await userManager.FindByNameAsync(username);
+            //var userbyEmail = await userManager.FindByEmailAsync(Email);
+            //var us = await userManager.ChangePasswordAsync(userbyname, "", ne);
+
+            if (userexists != null)
+            {
+                //var re = await userManager.GeneratePasswordResetTokenAsync(userbyname);
+                var user = await userManager.FindByIdAsync(userexists.Id);
+                var token = await userManager.GeneratePasswordResetTokenAsync(user);
+                var result = await userManager.ResetPasswordAsync(user, token, "MyN3wP@ssw0rd");
+                if (result.Succeeded == true)
+                {
+                    return Ok("Success");
+                }
+                else
+                {
+                    return Ok("Something went wrong.");
+                }
+                // var userId = await userManager.GetUserId(
+                //var token = await userManager.GeneratePasswordResetTokenAsync(userbyEmail);
+
+                // var result = await userManager.ResetPasswordAsync(userId, token, newPassword);
+                // var r = await userManager.generat
+            }
+            return BadRequest(new Response { Status = "Unauthorised", Message = "Username not found" });
+        }
     }
 }

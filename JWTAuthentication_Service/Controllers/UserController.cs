@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using JWTAuthentication_Service.Models;
@@ -8,6 +9,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using NLog;
 
 namespace JWTAuthentication_Service.Controllers
 {
@@ -15,23 +18,24 @@ namespace JWTAuthentication_Service.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         private readonly UserManager<ApplicationUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly IConfiguration _configuration;
-
         private readonly int _Newpasswordlength;
 
-        public UserController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
+        public UserController(IConfiguration config, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
             _configuration = configuration;
+            _Newpasswordlength = config.GetValue<int>("Passwordlength");
         }
 
         [HttpDelete]
         [Route("Deleteuser")]
         [Authorize(Roles = UserRoles.Admin)]
-        public async Task<ActionResult> DeleteUser(string username)
+        public async Task<ActionResult> DeleteUser([Required] string username)
         {
             var user = await userManager.FindByNameAsync(username);
             if (username == null || user == null)
@@ -59,7 +63,7 @@ namespace JWTAuthentication_Service.Controllers
 
         [HttpPut]
         [Route("/api/Updatepassword")]
-        public async Task<ActionResult> UpdatePassword(string username, string currentpassword, string newpassword)
+        public async Task<ActionResult> UpdatePassword([Required] string username, [Required] string currentpassword, [Required] string newpassword)
         {
             var user = await userManager.FindByNameAsync(username);
 
@@ -78,6 +82,30 @@ namespace JWTAuthentication_Service.Controllers
             else
             {
                 return BadRequest(new Response { Status = "Unauthorised", Message = "Password is incorrect!" });
+            }
+        }
+
+        [HttpGet]
+        [Route("/api/GetUserRole")]
+        public async Task<IActionResult> Getuserrole(string Username)
+        {
+            logger.Info(_Newpasswordlength);
+            var data = CreateRandomPassword(_Newpasswordlength);
+            logger.Info(data);
+            try
+            {
+                var user = await userManager.FindByNameAsync(Username);
+                if (user == null)
+                {
+                    return BadRequest(new Response { Status = "Unauthorised", Message = "Username not found" });
+                }
+                var userrole = await userManager.GetRolesAsync(user);
+                return Ok(userrole);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                throw;
             }
         }
 
@@ -129,5 +157,6 @@ namespace JWTAuthentication_Service.Controllers
             }
             return BadRequest(new Response { Status = "Unauthorised", Message = "Username not found" });
         }
+
     }
 }

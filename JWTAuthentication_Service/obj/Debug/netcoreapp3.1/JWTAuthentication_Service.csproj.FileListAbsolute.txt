@@ -97,6 +97,7 @@ D:\Apps\Microservices\microservices\JWTAuthentication_Service\obj\Debug\netcorea
 D:\Apps\Microservices\microservices\JWTAuthentication_Service\obj\Debug\netcoreapp3.1\JWTAuthentication_Service.MvcApplicationPartsAssemblyInfo.cache
 D:\Apps\Microservices\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Apps\Microservices\microservices\JWTAuthentication_Service\obj\Debug\netcoreapp3.1\JWTAuthentication_Service.csprojAssemblyReference.cache
+D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\nlog.config
 D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\appsettings.json
 D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -139,6 +140,9 @@ D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netco
 D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\NLog.dll
+D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
 D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -156,7 +160,6 @@ D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netco
 D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\obj\Debug\netcoreapp3.1\JWTAuthentication_Service.csprojAssemblyReference.cache
 D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\obj\Debug\netcoreapp3.1\JWTAuthentication_Service.AssemblyInfoInputs.cache
 D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\obj\Debug\netcoreapp3.1\JWTAuthentication_Service.AssemblyInfo.cs
 D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\obj\Debug\netcoreapp3.1\JWTAuthentication_Service.csproj.CoreCompileInputs.cache

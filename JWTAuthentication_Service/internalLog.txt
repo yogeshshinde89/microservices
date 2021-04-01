@@ -1,0 +1,33 @@
+2021-04-01 11:23:10.3822 Info Message Template Auto Format enabled
+2021-04-01 11:23:11.2035 Info Loading assembly: NLog.Web.AspNetCore
+2021-04-01 11:23:12.9311 Info Adding target FileTarget(Name=alldata)
+2021-04-01 11:23:13.1252 Error Error parsing layout trace will be ignored. Exception: System.ArgumentException: LayoutRenderer cannot be found: 'trace'
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Layouts.LayoutParser.GetLayoutRenderer(ConfigurationItemFactory configurationItemFactory, String name, Nullable`1 throwConfigExceptions)
+2021-04-01 11:23:16.4570 Info Adding target DatabaseTarget(Name=dbTarget)
+2021-04-01 11:23:16.8209 Info Adding target FileTarget(Name=otherFile-web)
+2021-04-01 11:23:17.0561 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'database' not found for logging rule: *.
+2021-04-01 11:23:17.0561 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logfile' not found for logging rule: *.
+2021-04-01 11:23:17.0561 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'eventlog' not found for logging rule: *.
+2021-04-01 11:23:17.4580 Info Validating config: TargetNames=dbTarget, alldata, otherFile-web, ConfigItems=71, FilePath=D:\Projects\DOT NET Core\microservices\JWTAuthentication_Service\bin\Debug\netcoreapp3.1\nlog.config
+2021-04-01 11:23:18.8360 Error DatabaseTarget(Name=dbTarget): Failed to create ConnectionType from DBProvider=sqlserver Exception: System.IO.FileNotFoundException: Could not load file or assembly 'System.Data.SqlClient, Culture=neutral, PublicKeyToken=null'. The system cannot find the file specified.
+File name: 'System.Data.SqlClient, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, RuntimeAssembly assemblyContext, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, StackCrawlMark& stackMark, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef, StackCrawlMark& stackMark, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at NLog.Targets.DatabaseTarget.SetConnectionType()
+   at NLog.Targets.DatabaseTarget.InitializeTarget()
+
+
+2021-04-01 11:23:19.0408 Error Database Target[dbTarget]: Error initializing target Exception: System.IO.FileNotFoundException: Could not load file or assembly 'System.Data.SqlClient, Culture=neutral, PublicKeyToken=null'. The system cannot find the file specified.
+File name: 'System.Data.SqlClient, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, RuntimeAssembly assemblyContext, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, StackCrawlMark& stackMark, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef, StackCrawlMark& stackMark, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at NLog.Targets.DatabaseTarget.SetConnectionType()
+   at NLog.Targets.DatabaseTarget.InitializeTarget()
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+
+

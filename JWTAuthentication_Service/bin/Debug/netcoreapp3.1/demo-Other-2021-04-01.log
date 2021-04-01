@@ -1,0 +1,10 @@
+2021-04-01 11:23:19.1118||DEBUG|JWTAuthentication_Service.Program|init main function |url: |action: 
+2021-04-01 11:24:15.8709||INFO|JWTAuthentication_Service.Controllers.UserController|8 |url: https://localhost/api/GetUserRole|action: Getuserrole
+2021-04-01 11:24:47.0753||INFO|JWTAuthentication_Service.Controllers.UserController|in5%Q!s$ |url: https://localhost/api/GetUserRole|action: Getuserrole
+2021-04-01 13:38:30.9594||INFO|JWTAuthentication_Service.Controllers.UserController|8 |url: https://localhost/api/GetUserRole|action: Getuserrole
+2021-04-01 13:38:31.0797||INFO|JWTAuthentication_Service.Controllers.UserController|F9P3yM*Y |url: https://localhost/api/GetUserRole|action: Getuserrole
+2021-04-01 13:40:06.6482||INFO|JWTAuthentication_Service.Controllers.AuthenticateController|ssdfsf |url: https://localhost/api/Authenticate/Login|action: Login
+2021-04-01 13:40:06.6588||INFO|JWTAuthentication_Service.Controllers.AuthenticateController|New Logger |url: https://localhost/api/Authenticate/Login|action: Login
+2021-04-01 13:40:07.0225||WARN|Microsoft.AspNetCore.Identity.UserManager|Invalid password for user 5767a6b8-1107-4731-827d-af3da7be3d4f. |url: https://localhost/api/Authenticate/Login|action: Login
+2021-04-01 13:40:24.3764||INFO|JWTAuthentication_Service.Controllers.AuthenticateController|ssdfsf |url: https://localhost/api/Authenticate/Login|action: Login
+2021-04-01 13:40:24.3841||INFO|JWTAuthentication_Service.Controllers.AuthenticateController|New Logger |url: https://localhost/api/Authenticate/Login|action: Login

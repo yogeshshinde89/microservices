@@ -11,7 +11,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using NLog;
 
 namespace JWTAuthentication_Service.Controllers
 {
@@ -19,11 +21,14 @@ namespace JWTAuthentication_Service.Controllers
     [ApiController]
     public class AuthenticateController : ControllerBase
     {
+        private readonly ILogger<AuthenticateController> _logger;
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         private readonly UserManager<ApplicationUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly IConfiguration _configuration;
-        public AuthenticateController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
+        public AuthenticateController(ILogger<AuthenticateController> logger, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
         {
+            _logger = logger;
             this.userManager = userManager;
             this.roleManager = roleManager;
             _configuration = configuration;
@@ -34,6 +39,8 @@ namespace JWTAuthentication_Service.Controllers
         [Route("Login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
+            _logger.LogInformation("ssdfsf");
+            logger.Info("New Logger");
             try
             {
                 var user = await userManager.FindByNameAsync(model.Username);
@@ -69,7 +76,7 @@ namespace JWTAuthentication_Service.Controllers
                         expiration = token.ValidTo
                     });
                 }
-                return Unauthorized();
+                return Unauthorized("Username or Password is Invalid");
             }
             catch (Exception ex)
             {
@@ -84,9 +91,13 @@ namespace JWTAuthentication_Service.Controllers
         {
             try
             {
-                var userExists = await userManager.FindByNameAsync(model.Username);
-                if (userExists != null)
-                    return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
+                var usernamesExists = await userManager.FindByNameAsync(model.Username);
+                if (usernamesExists != null)
+                    return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists with same Username!" });
+
+                var userEmailExists = await userManager.FindByEmailAsync(model.Username);
+                if (userEmailExists != null)
+                    return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists with same Email!" });
 
                 ApplicationUser user = new ApplicationUser()
                 {
@@ -94,9 +105,9 @@ namespace JWTAuthentication_Service.Controllers
                     SecurityStamp = Guid.NewGuid().ToString(),
                     UserName = model.Username
                 };
-                var result = await userManager.CreateAsync(user, model.Password);
+                var result = await userManager.CreateAsync(user);//, model.Password);
                 if (!result.Succeeded)
-                    return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+                    return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." + result });
 
                 return Ok(new Response { Status = "Success", Message = "User created successfully!" });
             }
@@ -113,7 +124,11 @@ namespace JWTAuthentication_Service.Controllers
         {
             var userExists = await userManager.FindByNameAsync(model.Username);
             if (userExists != null)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
+                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists with same Username!" });
+
+            var userEmailExists = await userManager.FindByEmailAsync(model.Username);
+            if (userEmailExists != null)
+                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists with same Email!" });
 
             ApplicationUser user = new ApplicationUser()
             {
@@ -138,7 +153,7 @@ namespace JWTAuthentication_Service.Controllers
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }
 
-   
+
 
 
     }

@@ -108,7 +108,16 @@ namespace JWTAuthentication_Service.Controllers
                 var result = await userManager.CreateAsync(user);//, model.Password);
                 if (!result.Succeeded)
                     return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." + result });
+               
+                if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+                if (!await roleManager.RoleExistsAsync(UserRoles.User))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
 
+                if (await roleManager.RoleExistsAsync(UserRoles.User))
+                {
+                    await userManager.AddToRoleAsync(user, UserRoles.User);
+                }
                 return Ok(new Response { Status = "Success", Message = "User created successfully!" });
             }
             catch (Exception ex)
@@ -150,7 +159,7 @@ namespace JWTAuthentication_Service.Controllers
             {
                 await userManager.AddToRoleAsync(user, UserRoles.Admin);
             }
-            return Ok(new Response { Status = "Success", Message = "User created successfully!" });
+            return Ok(new Response { Status = "Success", Message = "Admin User created successfully!" });
         }
 
 
